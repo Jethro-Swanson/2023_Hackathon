@@ -3,32 +3,18 @@
 {% block content %}
 <div>
     <div>
-        <div>
-            <h3>Edit list:</h3>
-         
-        </div>
 
-        <div>
-            {% if list_list %}
-            
-                {% for list in list_list%}
-                    {{list.title}} 
-                {% endfor %}
-            {% else %}
-                <p>no list </p>
-            {% endif %}
-        </div>
-
-       <!--<ul>
+       <ul>
             {% for item in object_list %}
             <li>
                 <div>
-                    <div
-                        role="button"
-                        onclick="location.href='#'">
-                        {{ item.title }}
-                        (Due {{ item.date_created }})
-                    </div>
+                    <a href="( %url yourlist% ){{list.get_pk}}">
+                       
+                    <div role="button">
+                         {{ item.title }}
+                        
+                    
+                    </div></a>
                 </div>
             </li>
             {% empty %}
@@ -37,10 +23,10 @@
         </ul>
         <p>
             <input
-                value="Add a new item"
+                value="Add a new list"
                 type="button"
-                onclick="location.href='#'" />
-        </p> -->
+                onclick="#" />
+        </p>
     </div> 
 </div>  
 {% endblock %}

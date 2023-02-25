@@ -43,3 +43,6 @@ class ListUpdate(UpdateView):
 class ItemUpdate(UpdateView):
     model = Item
     fields = '__all__'
+
+class ListDetailView(generic.DetailView):
+    model = List
