@@ -5,16 +5,29 @@
     <div>
         <div>
             <h3>Edit list:</h3>
-            <h5>{{ shopping_list.title | upper }}</h5>
+         
         </div>
-        <ul>
-            {% for shopping_list in object_list %}
+
+        <div>
+            {% if list_list %}
+            
+                {% for list in list_list%}
+                    {{list.title}} 
+                {% endfor %}
+            {% else %}
+                <p>no list </p>
+            {% endif %}
+        </div>
+
+       <!--<ul>
+            {% for item in object_list %}
             <li>
                 <div>
                     <div
                         role="button"
                         onclick="location.href='#'">
-                        {{ shopping_list.title }}
+                        {{ item.title }}
+                        (Due {{ item.date_created }})
                     </div>
                 </div>
             </li>
@@ -27,7 +40,7 @@
                 value="Add a new item"
                 type="button"
                 onclick="location.href='#'" />
-        </p>
-    </div>
-</div>
+        </p> -->
+    </div> 
+</div>  
 {% endblock %}
