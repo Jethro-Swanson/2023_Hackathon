@@ -1,12 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Shopping List</title>
-</head>
-<body>
-<h1>hello world</h1>
-<h2>test</h2>
-<h2>test</h2>
+<!doctype html>
+<html lang="en">
 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Simple.css-->
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <title>Shopping Lists</title>
+</head>
+
+<body>
+    <div>
+        <h1 onclick="location.href='{% url 'test' %}'">
+            Shopping Lists
+        </h1>
+    </div>
+    <div>
+        {% block content %}
+        This content will be replaced by different html code for each page.
+        {% endblock %}
+    </div>
 </body>
+
 </html>
