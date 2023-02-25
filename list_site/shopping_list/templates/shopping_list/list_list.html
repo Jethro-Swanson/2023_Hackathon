@@ -1,32 +1,16 @@
 {% extends "home.html" %}
 
 {% block content %}
-<div>
-    <div>
-
-       <ul>
-            {% for item in object_list %}
+            {% for list in object_list %}
             <li>
                 <div>
-                    <a href="( %url yourlist% ){{list.get_pk}}">
-                       
-                    <div role="button">
-                         {{ item.title }}
-                        
-                    
-                    </div></a>
+                    <a href="{% url 'list_detail' list.list_id %}">
+						MY TITLE:
+                         {{ list.title }}
+                    </a>
                 </div>
             </li>
             {% empty %}
             <p>There are no to-do items in this list.</p>
             {% endfor %}
-        </ul>
-        <p>
-            <input
-                value="Add a new list"
-                type="button"
-                onclick="#" />
-        </p>
-    </div> 
-</div>  
 {% endblock %}
